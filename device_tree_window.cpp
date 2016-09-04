@@ -17,7 +17,9 @@ Device_tree_window::Device_tree_window(QWidget *parent) :
     ui(new Ui::Device_tree_window) {
     ui->setupUi(this);
     file_args = QCoreApplication::arguments();
-    open_new_fdt_model(file_args[1]);
+    if (file_args.count() > 1) {
+        open_new_fdt_model(file_args[1]);
+    }
 }
 
 Device_tree_window::~Device_tree_window() {
